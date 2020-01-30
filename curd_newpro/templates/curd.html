@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {% if form %}
+        <table border="2px">
+        <thead>
+        <<tr>
+            <th>eno</th>
+            <th>ename</th>
+            <th>eaddres</th>
+        </tr>
+
+        </thead>
+        {% for i in form %}
+            <tr>
+            <td>{{ i.eno }}</td>
+            <td>{{ i.ename }}</td>
+            <td>{{ i.eaddres }}</td>
+            <td><a href="#">update</a><a href="#">delete</a></td>
+            </tr>
+        {% endfor %}
+        </table><br>
+        {% else %}
+        <p>no records aviballe</p>
+
+    {% endif %}
+
+</form><br>
+<a href="/insert" class="btn btn-success">insert data</a>
+
+</body>
+</html>
